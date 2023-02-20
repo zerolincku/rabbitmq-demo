@@ -1,13 +1,13 @@
-package com.linck.rabbitmqdemo;
+package com.linck.consumer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RabbitmqDemoApplication {
+public class ConsumerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(RabbitmqDemoApplication.class, args);
+        SpringApplication.run(ConsumerApplication.class, args);
     }
 
 }

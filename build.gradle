@@ -4,28 +4,25 @@ plugins {
     id 'io.spring.dependency-management' version '1.0.15.RELEASE'
 }
 
-group = 'com.linck'
-version = '0.1'
-sourceCompatibility = '11'
-
-configurations {
-    compileOnly {
-        extendsFrom annotationProcessor
+allprojects {
+    buildscript {
+        repositories {
+            maven {
+                url "https://maven.aliyun.com/repository/central"
+            }
+            mavenCentral()
+        }
     }
-}
 
-repositories {
-    mavenCentral()
-}
+    repositories {
+        maven {
+            url "https://maven.aliyun.com/repository/central"
+        }
+        mavenCentral()
+    }
 
-dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-amqp'
-    compileOnly 'org.projectlombok:lombok'
-    annotationProcessor 'org.projectlombok:lombok'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'org.springframework.amqp:spring-rabbit-test'
-}
-
-tasks.named('test') {
-    useJUnitPlatform()
+    group = 'com.linck'
+    version = '0.1'
+    sourceCompatibility = '11'
+    targetCompatibility = '11'
 }
